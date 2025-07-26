@@ -66,12 +66,12 @@ RayfieldButton.MouseButton1Click:Connect(function()
     EnableButton.MouseButton1Click:Connect(function()
         NotifGui:Destroy()
         getgenv().autoBlockNotify = true
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/skibidi399/Auto-block-script/refs/heads/main/skobfjdjfjdjs"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ZIONPCE/JB/refs/heads/main/skobfjdjfjdjs.lua"))()
     end)
 
     DisableButton.MouseButton1Click:Connect(function()
         NotifGui:Destroy()
         getgenv().autoBlockNotify = false
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/skibidi399/Auto-block-script/refs/heads/main/skobfjdjfjdjs"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ZIONPCE/JB/refs/heads/main/skobfjdjfjdjs.lua"))()
     end)
 end)
