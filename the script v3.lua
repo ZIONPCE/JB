@@ -1,0 +1,77 @@
+-- 主自动格挡中心选择器
+local Players = game:GetService("Players")
+local PlayerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
+local StarterGui = game:GetService("StarterGui")
+
+local OptionGui = Instance.new("ScreenGui", PlayerGui)
+OptionGui.Name = "InitialOptionGui"
+OptionGui.ResetOnSpawn = false
+
+local OptionFrame = Instance.new("Frame", OptionGui)
+OptionFrame.Size = UDim2.new(0, 260, 0, 140)
+OptionFrame.Position = UDim2.new(0.5, -130, 0.5, -70)
+OptionFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+OptionFrame.BorderSizePixel = 0
+
+local RayfieldButton = Instance.new("TextButton", OptionFrame)
+RayfieldButton.Text = "Rayfield 自动格挡 (使用这个)"
+RayfieldButton.Size = UDim2.new(1, -20, 0.45, 0)
+RayfieldButton.Position = UDim2.new(0, 10, 0, 10)
+RayfieldButton.BackgroundColor3 = Color3.fromRGB(40, 130, 255)
+RayfieldButton.TextColor3 = Color3.new(1, 1, 1)
+RayfieldButton.TextWrapped = true
+RayfieldButton.TextScaled = true
+
+local OrionButton = Instance.new("TextButton", OptionFrame)
+OrionButton.Text = "Orion 自动格挡 (想玩困难模式就使用这个)"
+OrionButton.Size = UDim2.new(1, -20, 0.45, 0)
+OrionButton.Position = UDim2.new(0, 10, 0.55, 0)
+OrionButton.BackgroundColor3 = Color3.fromRGB(0, 200, 100)
+OrionButton.TextColor3 = Color3.new(1, 1, 1)
+OrionButton.TextWrapped = true
+OrionButton.TextScaled = true
+
+OrionButton.MouseButton1Click:Connect(function()
+    OptionGui:Destroy()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/skibidi399/Auto-block-script/refs/heads/main/The%20script%20v3%20(2)"))()
+end)
+
+RayfieldButton.MouseButton1Click:Connect(function()
+    OptionGui:Destroy()
+
+    local NotifGui = Instance.new("ScreenGui", PlayerGui)
+    NotifGui.Name = "NotifChoiceGui"
+    NotifGui.ResetOnSpawn = false
+
+    local Frame = Instance.new("Frame", NotifGui)
+    Frame.Size = UDim2.new(0, 200, 0, 100)
+    Frame.Position = UDim2.new(0.5, -100, 0.5, -50)
+    Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    Frame.BorderSizePixel = 0
+
+    local EnableButton = Instance.new("TextButton", Frame)
+    EnableButton.Text = "启用通知"
+    EnableButton.Size = UDim2.new(1, 0, 0.5, 0)
+    EnableButton.Position = UDim2.new(0, 0, 0, 0)
+    EnableButton.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+    EnableButton.TextColor3 = Color3.new(1, 1, 1)
+
+    local DisableButton = Instance.new("TextButton", Frame)
+    DisableButton.Text = "禁用通知 (提升帧率)"
+    DisableButton.Size = UDim2.new(1, 0, 0.5, 0)
+    DisableButton.Position = UDim2.new(0, 0, 0.5, 0)
+    DisableButton.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+    DisableButton.TextColor3 = Color3.new(1, 1, 1)
+
+    EnableButton.MouseButton1Click:Connect(function()
+        NotifGui:Destroy()
+        getgenv().autoBlockNotify = true
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/skibidi399/Auto-block-script/refs/heads/main/skobfjdjfjdjs"))()
+    end)
+
+    DisableButton.MouseButton1Click:Connect(function()
+        NotifGui:Destroy()
+        getgenv().autoBlockNotify = false
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/skibidi399/Auto-block-script/refs/heads/main/skobfjdjfjdjs"))()
+    end)
+end)
