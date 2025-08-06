@@ -1,4 +1,4 @@
--- ✅ VEX OP Hub X 森林中的99个夜晚[Z某人汉化]
+-- ✅ VEX OP Hub X 森林中的99个夜晚Z某人汉化
 
 -- 加载 WindUI
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
@@ -533,18 +533,18 @@ Tabs.Visual:Slider({
 })
 
 
--- Teleports Tab
-Tabs.Teleports:Section({ Title = "Teleports" })
+-- 传送功能标签
+Tabs.Teleports:Section({ Title = "传送功能" })
 
 local waypoints = {
-    ["Bonfire"] = CFrame.new(0.32, 6.15, -0.22),
-    ["Cabin"] = CFrame.new(-100, 5, 50),
-    ["River"] = CFrame.new(150, 3, -200),
+    ["篝火"] = CFrame.new(0.32, 6.15, -0.22),
+    ["小屋"] = CFrame.new(-100, 5, 50),
+    ["河流"] = CFrame.new(150, 3, -200),
 }
 
 for name, cf in pairs(waypoints) do
     Tabs.Teleports:Button({
-        Title = "Teleport to " .. name,
+        Title = "传送到" .. name,
         Callback = function()
             if character and character:FindFirstChild("HumanoidRootPart") then
                 character.HumanoidRootPart.CFrame = cf
@@ -580,7 +580,7 @@ end)
 
 
 Tabs.Teleports:Button({
-    Title = "Teleport to Safe Zone",
+    Title = "传送到安全区",
     Callback = function()
         local safezoneBaseplates = {}
         local baseplateSize = Vector3.new(2048, 1, 2048)
@@ -608,10 +608,10 @@ Tabs.Teleports:Button({
 })
 
 
--- === AUTO TAB FUNCTIONALITY ===
+-- === 自动功能标签 ===
 local autoTab = Tabs.Auto
 
--- === SERVICES & BASE REFERENCES ===
+-- === 服务器和基础引用 ===
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
@@ -623,15 +623,15 @@ local itemsFolder = Workspace:WaitForChild("Items")
 local remoteEvents = ReplicatedStorage:WaitForChild("RemoteEvents")
 local remoteConsume = remoteEvents:WaitForChild("RequestConsumeItem")
 
--- === POSITIONS & ITEM LISTS ===
+-- === 位置和物品列表 ===
 local campfireDropPos = Vector3.new(0, 19, 0)
 local machineDropPos = Vector3.new(21, 16, -5)
 
-local campfireFuelItems = {"Log", "Coal", "Fuel Canister", "Oil Barrel", "Biofuel"}
-local autocookItems = {"Morsel", "Steak"}
-local autoGrindItems = {"UFO Junk", "UFO Component", "Old Car Engine", "Broken Fan", "Old Microwave", "Bolt", "Log", "Cultist Gem", "Sheet Metal", "Old Radio", "Tyre", "Washing Machine", "Cultist Experiment", "Cultist Component", "Gem of the Forest Fragment", "Broken Microwave"}
-local autoEatFoods = {"Cooked Steak", "Cooked Morsel", "Berry", "Carrot", "Apple"}
-local biofuelItems = {"Carrot", "Cooked Morsel", "Morsel", "Steak", "Cooked Steak", "Log"}
+local campfireFuelItems = {"木头", "煤炭", "燃料罐", "油桶", "生物燃料"}
+local autocookItems = {"小块肉", "牛排"}
+local autoGrindItems = {"UFO残骸", "UFO组件", "旧汽车发动机", "坏掉的风扇", "旧微波炉", "螺栓", "木头", "邪教徒宝石", "金属板", "旧收音机", "轮胎", "洗衣机", "邪教徒实验品", "邪教徒组件", "森林宝石碎片", "坏掉的微波炉"}
+local autoEatFoods = {"熟牛排", "熟小块肉", "浆果", "胡萝卜", "苹果"}
+local biofuelItems = {"胡萝卜", "煮熟的食物", "小块肉", "牛排", "熟牛排", "木头"}
 
 local alwaysFeed = {}
 local hpFeed = {}
@@ -658,25 +658,25 @@ local function setupMultiDropdown(title, itemList, storage)
     })
 end
 
-setupMultiDropdown("Campfire Fuel (All at Once)", campfireFuelItems, alwaysFeed)
-setupMultiDropdown("Campfire Fuel According to HP", campfireFuelItems, hpFeed)
-setupMultiDropdown("Auto Cook", autocookItems, cookItems)
-setupMultiDropdown("Auto Machine Grind", autoGrindItems, grindItems)
-setupMultiDropdown("Auto Biofuel", biofuelItems, biofuelEnabled)
+setupMultiDropdown("篝火燃料 (一次性全部)", campfireFuelItems, alwaysFeed)
+setupMultiDropdown("根据篝火生命值添加篝火燃料", campfireFuelItems, hpFeed)
+setupMultiDropdown("自动亨饪", autocookItems, cookItems)
+setupMultiDropdown("自动机器研磨", autoGrindItems, grindItems)
+setupMultiDropdown("自动生物燃料", biofuelItems, biofuelEnabled)
 
 autoTab:Toggle({
-    Title = "Auto Eat",
+    Title = "自己进食",
     Default = false,
     Callback = function(val) autoEatEnabled = val end
 })
 
 autoTab:Toggle({
-    Title = "Auto Eat According to HP",
+    Title = "根据生命值自动进食",
     Default = false,
     Callback = function(val) autoEatHPEnabled = val end
 })
 
--- === MOVE ITEM FUNCTION ===
+-- === 移动物品功能 ===
 local function moveItemToPos(item, position)
     local part = item.PrimaryPart or item:FindFirstChildWhichIsA("BasePart") or item:FindFirstChild("Handle")
     if not part then return end
@@ -691,7 +691,7 @@ local function moveItemToPos(item, position)
     end)
 end
 
--- === BACKGROUND LOOPS ===
+-- === 后台循环 ===
 coroutine.wrap(function()
     while task.wait(2) do
         for itemName in pairs(alwaysFeed) do
@@ -788,7 +788,7 @@ coroutine.wrap(function()
     end
 end)()
 
--- === TREE TELEPORT ===
+-- === 树木传送 ===
 local originalTreeCFrames, treesBrought = {}, false
 local function getAllSmallTrees()
     local trees, map = {}, Workspace:FindFirstChild("Map")
@@ -838,7 +838,7 @@ local function restoreTrees()
 end
 
 autoTab:Toggle({
-    Title = "Auto Bring All Small Trees",
+    Title = "自动召唤所有小树",
     Default = false,
     Callback = function(v)
         if v and not treesBrought then bringAllTrees()
