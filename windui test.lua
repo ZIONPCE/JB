@@ -349,7 +349,7 @@ local Button = Tab:Button({
 
 local Tab = Window:Tab({
     Title = "死铁轨",
-    Icon = "warehouse",
+    Icon = "train-track",
     Locked = false,
 })
 
@@ -359,5 +359,47 @@ local Button = Tab:Button({
     Locked = false,
     Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HeadHarse/DeadRails/refs/heads/main/V4SWING"))()
+    end
+})
+
+local Button = Tab:Button({
+    Title = "NovazHub",
+    Desc = "Z某汉化",
+    Locked = false,
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ZIONPCE/JB/refs/heads/main/autofarmbond.lua"))()
+    end
+})
+
+local Tab = Window:Tab({
+    Title = "被遗弃",
+    Icon = "drama",
+    Locked = false,
+})
+
+local Button = Tab:Button({
+    Title = "Sigmasaken V9",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/sigmaboy-sigma-boy/sigmaboy-sigma-boy/refs/heads/main/StaminaSettings.ESP.PIDC.raw'))()
+    end
+})
+
+local Button = Tab:Button({
+    Title = "XA",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    loadstring(game:HttpGet(('https://github.com/DevSloPo/Main/raw/main/Forsaken')))()
+    end
+})
+
+local Button = Tab:Button({
+    Title = "Httadmin",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()
     end
 })
