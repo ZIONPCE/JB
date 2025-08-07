@@ -1,3 +1,71 @@
+-- 卡密系统开始
+local validKeys = {
+    "Z123-4567-890A", -- 示例卡密
+}
+
+local function checkKey(key)
+    for _, validKey in pairs(validKeys) do
+        if key == validKey then
+            return true
+        end
+    end
+    return false
+end
+
+-- 创建卡密验证窗口
+local KeyAuthWindow = WindUI:CreateWindow({
+    Title = "Z脚本 - 卡密验证",
+    Icon = "lock",
+    Size = UDim2.fromOffset(400, 250),
+    Theme = "Dark",
+    Resizable = false
+})
+
+local AuthTab = KeyAuthWindow:Tab({
+    Title = "验证",
+    Icon = "key"
+})
+
+local AuthSection = AuthTab:Section({
+    Title = "请输入您的卡密"
+})
+
+local KeyInput = AuthSection:Textbox({
+    Title = "卡密",
+    Placeholder = "XXXX-XXXX-XXXX"
+})
+
+local StatusLabel = AuthSection:Label({
+    Title = "状态: 等待验证",
+    TextXAlignment = "Left"
+})
+
+AuthSection:Button({
+    Title = "验证",
+    Callback = function()
+        local key = KeyInput:GetValue()
+        if checkKey(key) then
+            StatusLabel:SetTitle("状态: 验证成功!")
+            wait(1)
+            KeyAuthWindow:Destroy()
+            -- 验证通过后继续执行原脚本
+            print("反挂机开启")
+            local vu = game:GetService("VirtualUser")
+            -- 这里继续您原来的脚本内容...
+        else
+            StatusLabel:SetTitle("状态: 卡密无效!")
+        end
+    end
+})
+
+AuthSection:Label({
+    Title = "没有卡密? 请联系作者获取",
+    TextXAlignment = "Center"
+})
+
+return -- 阻止直接执行后面的代码，直到验证通过
+-- 卡密系统结束
+
 print("反挂机开启")
 		local vu = game:GetService("VirtualUser")
 		game:GetService("Players").LocalPlayer.Idled:connect(function()
