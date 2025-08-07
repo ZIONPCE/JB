@@ -41,10 +41,10 @@ local Window = WindUI:CreateWindow({
         Note = "Example Key System.",
         Thumbnail = {
             Image = "rbxassetid://135015304695782",
-            Title = "Thumbnail",
+            Title = "🇨🇳",
         },
-        URL = "https://github.com/Footagesus/WindUI",
-        SaveKey = true,
+        URL = "https://discord.gg/CwUPuDfp",
+        SaveKey = false,
     },
 })
 
