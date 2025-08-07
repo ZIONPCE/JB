@@ -37,7 +37,7 @@ local Window = WindUI:CreateWindow({
         end,
     },
     KeySystem = { -- <- ↓ remove this all, if you dont neet the key system
-        Key = { "1234", "5678" },
+        Key = { "FREE_0170d12b78ef6834ea007dfcde93b5da", "5678" },
         Note = "Example Key System.",
         Thumbnail = {
             Image = "rbxassetid://135015304695782",
@@ -413,3 +413,19 @@ local Button = Tab:Button({
     loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()
     end
 })
+
+local Tab = Window:Tab({
+    Title = "DOORS👁️",
+    Icon = "warehouse",
+    Locked = false,
+})
+
+local Button = Tab:Button({
+    Title = "ProHaxV3",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheHunterSolo1/Scripts/refs/heads/main/message.txt"))()
+    end
+})
+    
