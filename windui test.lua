@@ -36,6 +36,16 @@ local Window = WindUI:CreateWindow({
             print("clicked")
         end,
     },
+    KeySystem = { -- <- ↓ remove this all, if you dont neet the key system
+        Key = { "1234", "5678" },
+        Note = "Example Key System.",
+        Thumbnail = {
+            Image = "rbxassetid://135015304695782",
+            Title = "Thumbnail",
+        },
+        URL = "https://github.com/Footagesus/WindUI",
+        SaveKey = true,
+    },
 })
 
 Window:EditOpenButton({
