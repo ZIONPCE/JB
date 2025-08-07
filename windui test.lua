@@ -81,8 +81,6 @@ local Sound = Instance.new("Sound")
         Sound.PlayOnRemove = true
         Sound:Destroy()
 
-local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/CNHM/asg/refs/heads/main/wind%20ui.lua"))()
-
 local Window = WindUI:CreateWindow({
     Title = "Z脚本",
     Icon = "user-check",
@@ -471,3 +469,5 @@ local Button = Tab:Button({
     loadstring(game:HttpGet"https://raw.githubusercontent.com/OWOWOWWOW/HTT/main/HT.lua")()
     end
 })
+
+local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/CNHM/asg/refs/heads/main/wind%20ui.lua"))()
