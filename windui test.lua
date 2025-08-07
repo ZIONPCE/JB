@@ -15,21 +15,6 @@ local Sound = Instance.new("Sound")
 
 local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/CNHM/asg/refs/heads/main/wind%20ui.lua"))()
 
-local CorrectKey = "YOUR_SECRET_KEY_HERE"
-
-local KeyWindow = WindUI:CreateWindow({
-    Title = "密钥验证",
-    -- ...
-})
-
-KeyTab:Button({
-    Title = "验证密钥",
-    Callback = function()
-        local EnteredKey = KeyInput.Text
-
-        if EnteredKey == CorrectKey then
-            KeyWindow:Destroy()
-
 local Window = WindUI:CreateWindow({
     Title = "Z脚本",
     Icon = "user-check",
