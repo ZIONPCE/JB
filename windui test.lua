@@ -416,7 +416,7 @@ local Button = Tab:Button({
 
 local Tab = Window:Tab({
     Title = "DOORS👁️",
-    Icon = "warehouse",
+    Icon = "door-open",
     Locked = false,
 })
 
@@ -428,4 +428,33 @@ local Button = Tab:Button({
     loadstring(game:HttpGet("https://raw.githubusercontent.com/TheHunterSolo1/Scripts/refs/heads/main/message.txt"))()
     end
 })
-    
+
+local Tab = Window:Tab({
+    Title = "自然灾害",
+    Icon = "building",
+    Locked = false,
+})    
+
+local Button = Tab:Button({
+    Title = "假延迟",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DROID-cell-sys/ANTI-UTTP-SCRIPTT/refs/heads/main/EGOR%20SCRIPT%20BY%20ANTI-UTTP"))()
+    end
+})
+
+local Tab = Window:Tab({
+    Title = "墨水游戏",
+    Icon = "gamepad-2",
+    Locked = false,
+})
+
+local Button = Tab:Button({
+    Title = "BlindHub",
+    Desc = "",
+    Locked = false,
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Blind-Man-Walking/Ink-game-script/refs/heads/main/Test3"))()
+    end
+})
