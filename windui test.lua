@@ -349,6 +349,15 @@ local Tab = Window:Tab({
 })
 
 local Button = Tab:Button({
+    Title = "自动飞行",
+    Desc = "上升下降等",
+    Locked = false,
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ZIONPCE/JB/refs/heads/main/fait.lua"))()
+    end
+})
+
+local Button = Tab:Button({
     Title = "NEPT",
     Desc = "Z某汉化",
     Locked = false,
