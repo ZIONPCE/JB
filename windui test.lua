@@ -35,15 +35,15 @@ local Window = WindUI:CreateWindow({
         Callback = function()
             print("clicked")
         end,
-    },
+},
     KeySystem = { -- <- ↓ remove this all, if you dont neet the key system
-        Key = { "FREE_0170d12b78ef6834ea007dfcde93b5da", "5678" },
+        Key = { "ZMRENPBGHTCY", "5678" },
         Note = "Example Key System.",
         Thumbnail = {
-            Image = "rbxassetid://135015304695782",
+            Image = "rbxassetid://",
             Title = "Z某人",
         },
-        URL = "https://discord.gg/CwUPuDfp",
+        URL = "https://discord.gg/2mvb9CH6",
         SaveKey = false,
     },
 })
@@ -450,20 +450,5 @@ local Button = Tab:Button({
     Locked = false,
     Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/DROID-cell-sys/ANTI-UTTP-SCRIPTT/refs/heads/main/EGOR%20SCRIPT%20BY%20ANTI-UTTP"))()
-    end
-})
-
-local Tab = Window:Tab({
-    Title = "墨水游戏",
-    Icon = "gamepad-2",
-    Locked = false,
-})
-
-local Button = Tab:Button({
-    Title = "BlindHub",
-    Desc = "",
-    Locked = false,
-    Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Blind-Man-Walking/Ink-game-script/refs/heads/main/Test3"))()
     end
 })
