@@ -41,7 +41,7 @@ local Window = WindUI:CreateWindow({
         Note = "Example Key System.",
         Thumbnail = {
             Image = "rbxassetid://135015304695782",
-            Title = "𝘿𝙤𝙣'𝙩 𝙘𝙖𝙧𝙚 𝙖𝙗𝙤𝙪𝙩 𝙬𝙤𝙧𝙡𝙙𝙡𝙮 𝙚𝙮𝙚𝙨 𝙩𝙤 𝙥𝙪𝙧𝙨𝙪𝙚 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 𝙡𝙞𝙜𝙝",
+            Title = "Z某人",
         },
         URL = "https://discord.gg/CwUPuDfp",
         SaveKey = false,
