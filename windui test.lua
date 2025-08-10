@@ -25,7 +25,7 @@ local Window = WindUI:CreateWindow({
     Theme = "Dark",
     Resizable = true,
     SideBarWidth = 200,
-    Background = "", -- rbxassetid only
+    Background = "https://i.postimg.cc/QxWWGyHL/IMG-20250806-220614.png",
     BackgroundImageTransparency = 0.42,
     HideSearchBar = false,
     ScrollBarEnabled = true,
@@ -40,7 +40,7 @@ local Window = WindUI:CreateWindow({
         Key = { "ZMRENPBGHTCY", "5678" },
         Note = "Example Key System.",
         Thumbnail = {
-            Image = "rbxassetid://121253615892241",
+            Image = "rbxassetid://",
             Title = "Z某人",
         },
         URL = "https://discord.gg/2mvb9CH6",
