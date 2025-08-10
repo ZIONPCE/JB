@@ -40,7 +40,7 @@ local Window = WindUI:CreateWindow({
         Key = { "ZMRENPBGHTCY", "5678" },
         Note = "Example Key System.",
         Thumbnail = {
-            Image = "rbxassetid://",
+            Image = "rbxassetid://121253615892241",
             Title = "Z某人",
         },
         URL = "https://discord.gg/2mvb9CH6",
