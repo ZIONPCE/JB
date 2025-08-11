@@ -84,54 +84,6 @@ coroutine.wrap(function()
     
     updateProgress(0.5, "正在创建主窗口...")
     -- 这里继续您原来的脚本内容
-    local Window = WindUI:CreateWindow({
-        Title = "Z脚本",
-        Icon = "user-check",
-        Author = "作者:Z某人",
-        Folder = "CloudHub",
-        Size = UDim2.fromOffset(580, 460),
-        Transparent = true,
-        Theme = "Dark",
-        Resizable = true,
-        SideBarWidth = 200,
-        Background = "https://i.postimg.cc/QxWWGyHL/IMG-20250806-220614.png",
-        BackgroundImageTransparency = 0.42,
-        HideSearchBar = false,
-        ScrollBarEnabled = true,
-        User = {
-            Enabled = true,
-            Anonymous = false,
-            Callback = function()
-                print("clicked")
-            end,
-        },
-        KeySystem = {
-            Key = { "ZMRENPBGHTCY", "5678" },
-            Note = "Example Key System.",
-            Thumbnail = {
-                Image = "rbxassetid://",
-                Title = "Z某人",
-            },
-            URL = "https://discord.gg/2mvb9CH6",
-            SaveKey = false,
-        },
-    })
-    
-    updateProgress(0.7, "正在初始化功能模块...")
-    -- 继续您原来的脚本内容...
-    
-    updateProgress(1.0, "加载完成!")
-    task.wait(1)
-    loadingScreen:Destroy()
-end)()
-
-print("反挂机开启")
-		local vu = game:GetService("VirtualUser")
-		game:GetService("Players").LocalPlayer.Idled:connect(function()
-		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-		   wait(1)
-		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-		end)
 
 local Sound = Instance.new("Sound")
         Sound.Parent = game.SoundService
@@ -579,3 +531,11 @@ local Button = Tab:Button({
     loadstring(game:HttpGet("https://raw.githubusercontent.com/DROID-cell-sys/ANTI-UTTP-SCRIPTT/refs/heads/main/EGOR%20SCRIPT%20BY%20ANTI-UTTP"))()
     end
 })
+
+updateProgress(0.7, "正在初始化功能模块...")
+    -- 继续您原来的脚本内容...
+    
+    updateProgress(1.0, "加载完成!")
+    task.wait(1)
+    loadingScreen:Destroy()
+end)()
