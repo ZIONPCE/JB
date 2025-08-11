@@ -1,3 +1,130 @@
+-- 加载界面
+local loadingScreen = Instance.new("ScreenGui")
+loadingScreen.Name = "ZScriptLoadingScreen"
+loadingScreen.IgnoreGuiInset = true
+loadingScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(1, 0, 1, 0)
+frame.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+frame.BorderSizePixel = 0
+frame.Parent = loadingScreen
+
+local logo = Instance.new("ImageLabel")
+logo.Size = UDim2.new(0, 200, 0, 200)
+logo.Position = UDim2.new(0.5, -100, 0.4, -100)
+logo.BackgroundTransparency = 1
+logo.Image = "rbxassetid://" -- 这里可以替换为您的logo图片ID
+logo.Parent = frame
+
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(0, 300, 0, 50)
+title.Position = UDim2.new(0.5, -150, 0.6, 0)
+title.BackgroundTransparency = 1
+title.Text = "Z脚本 正在加载..."
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Font = Enum.Font.SourceSansBold
+title.TextSize = 30
+title.Parent = frame
+
+local progressBar = Instance.new("Frame")
+progressBar.Size = UDim2.new(0.6, 0, 0, 20)
+progressBar.Position = UDim2.new(0.2, 0, 0.7, 0)
+progressBar.BackgroundColor3 = Color3.fromRGB(50, 50, 70)
+progressBar.BorderSizePixel = 0
+progressBar.Parent = frame
+
+local progressFill = Instance.new("Frame")
+progressFill.Size = UDim2.new(0, 0, 1, 0)
+progressFill.Position = UDim2.new(0, 0, 0, 0)
+progressFill.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
+progressFill.BorderSizePixel = 0
+progressFill.Parent = progressBar
+
+local statusText = Instance.new("TextLabel")
+statusText.Size = UDim2.new(0.6, 0, 0, 30)
+statusText.Position = UDim2.new(0.2, 0, 0.75, 0)
+statusText.BackgroundTransparency = 1
+statusText.Text = "初始化..."
+statusText.TextColor3 = Color3.fromRGB(200, 200, 200)
+statusText.Font = Enum.Font.SourceSans
+statusText.TextSize = 18
+statusText.Parent = frame
+
+loadingScreen.Parent = game:GetService("CoreGui") or game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+
+-- 模拟加载过程
+local function updateProgress(progress, status)
+    progressFill.Size = UDim2.new(progress, 0, 1, 0)
+    statusText.Text = status
+    task.wait(0.1)
+end
+
+-- 加载步骤
+coroutine.wrap(function()
+    updateProgress(0.1, "正在初始化反挂机系统...")
+    print("反挂机开启")
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+       vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+       wait(1)
+       vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+
+    updateProgress(0.2, "正在加载音效...")
+    local Sound = Instance.new("Sound")
+    Sound.Parent = game.SoundService
+    Sound.SoundId = "rbxassetid://4590662766"
+    Sound.Volume = 3
+    Sound.PlayOnRemove = true
+    Sound:Destroy()
+    
+    updateProgress(0.3, "正在加载WindUI...")
+    local WindUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/CNHM/asg/refs/heads/main/wind%20ui.lua"))()
+    
+    updateProgress(0.5, "正在创建主窗口...")
+    -- 这里继续您原来的脚本内容
+    local Window = WindUI:CreateWindow({
+        Title = "Z脚本",
+        Icon = "user-check",
+        Author = "作者:Z某人",
+        Folder = "CloudHub",
+        Size = UDim2.fromOffset(580, 460),
+        Transparent = true,
+        Theme = "Dark",
+        Resizable = true,
+        SideBarWidth = 200,
+        Background = "https://i.postimg.cc/QxWWGyHL/IMG-20250806-220614.png",
+        BackgroundImageTransparency = 0.42,
+        HideSearchBar = false,
+        ScrollBarEnabled = true,
+        User = {
+            Enabled = true,
+            Anonymous = false,
+            Callback = function()
+                print("clicked")
+            end,
+        },
+        KeySystem = {
+            Key = { "ZMRENPBGHTCY", "5678" },
+            Note = "Example Key System.",
+            Thumbnail = {
+                Image = "rbxassetid://",
+                Title = "Z某人",
+            },
+            URL = "https://discord.gg/2mvb9CH6",
+            SaveKey = false,
+        },
+    })
+    
+    updateProgress(0.7, "正在初始化功能模块...")
+    -- 继续您原来的脚本内容...
+    
+    updateProgress(1.0, "加载完成!")
+    task.wait(1)
+    loadingScreen:Destroy()
+end)()
+
 print("反挂机开启")
 		local vu = game:GetService("VirtualUser")
 		game:GetService("Players").LocalPlayer.Idled:connect(function()
